@@ -1,0 +1,3 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^([a-zA-Z_-]*)$ controlador.php?solicitud=$1 [QSA,L]
