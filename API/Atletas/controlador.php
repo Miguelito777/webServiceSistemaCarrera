@@ -15,7 +15,7 @@
 	}*/
 
 
-	if ($_GET["solicitud"] == "personal") {
+	/*if ($_GET["solicitud"] == "personal") {
 		$usuarios = $_SESSION["PERSONAL"]->getPersonal();	
 		echo json_encode($usuarios);
 	}
@@ -76,18 +76,31 @@
 		$_SESSION["PERSONAL"] = new Asistente();
 		$usuarios = $_SESSION["PERSONAL"]->getReportMoney();	
 		echo json_encode($usuarios);
-	}
+	}*/
 	
 
 
 	/**
 	*		init controller system carrera
 	*/
+
 	if ($_GET["solicitud"] == "getAtletas") {
 		$_SESSION["Atleta"] = new Atleta();
 		$atletas = $_SESSION["Atleta"]->getAtletas();	
 		echo json_encode($atletas);
 	}
+	/*if ($_GET["solicitud"] == "newEmploye") {
+		$request_body = file_get_contents('php://input');
+		$data = json_decode($request_body,true);
+		$_SESSION['persona'] = new Persona($data);
+		if ($_SESSION['persona']->save()) {
+			$response = "Excelente";
+			echo json_encode($response);
+		}else{
+			$response = "Error";
+			echo json_encode($response);
+		}
+	}*/
 
 
 ?>

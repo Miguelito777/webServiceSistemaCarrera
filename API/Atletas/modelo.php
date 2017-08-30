@@ -217,8 +217,9 @@ class Atleta extends Conexion
 		
 	}
 	public function getAtletas(){
-		$query = "SELECT * from Atletas";
+		$query = "select * from Atletas";
 		parent:: __construct();
+		$this->connection->query("SET CHARACTER SET utf8");
 		if($atletasTemp = $this->connection->query($query)){
 			$this->connection->close();
 			$atletas = array();
